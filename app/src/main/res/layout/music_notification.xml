@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@mipmap/ic_launcher"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:paddingTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/song_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="title of the song"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:divider="@drawable/divider"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:showDividers="middle">
+
+                    <Button
+                        android:id="@+id/button_previous"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/ic_skip_previous_black_24dp" />
+
+                    <Button
+                        android:id="@+id/button_pause"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/ic_pause_black_24dp" />
+
+                    <Button
+                        android:id="@+id/button_forward"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/ic_skip_next_black_24dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
