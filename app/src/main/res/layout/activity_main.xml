@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
     <ProgressBar
         android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="20dp"
         android:layout_marginTop="15dp" />
 
     <EditText
@@ -17,23 +19,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/button_start"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/progressBar"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onClickStart"
-        android:text="Start"
-        />
+        android:orientation="vertical"
 
-    <Button
-        android:id="@+id/button_stop"
-        android:layout_below="@+id/button_start"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickStop"
-        android:text="Stop"/>
+        android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="70dp"
+                android:layout_centerInParent="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:divider="@drawable/divider"
+                    android:gravity="center"
+                    android:background="@color/colorAccent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:showDividers="middle">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ic_pause_black_24dp"
+                    android:onClick="onPause"/>
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ic_play_circle_outline_black_24dp"
+                    android:onClick="onPlay"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ic_stop"
+                    android:onClick="onStop"/>
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

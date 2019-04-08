@@ -61,6 +61,7 @@ public class MyIntentService extends IntentService {
 
     @TargetApi(Build.VERSION_CODES.O)
     private void showNotification(){
+
         /*NotificationChannel channel = new NotificationChannel("myChannel", "not", NotificationManager.IMPORTANCE_HIGH);
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.createNotificationChannel(channel);*/
@@ -74,25 +75,16 @@ public class MyIntentService extends IntentService {
         RemoteViews bigView = new RemoteViews(getPackageName(), R.layout.music_notification);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "myChannel");
         Intent intent = new Intent(this, MyIntentService.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 12345, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(pendingIntent);
         builder.setSmallIcon(R.drawable.ic_play_circle_outline_black_24dp);
         builder.setAutoCancel(true);
         builder.setCustomContentView(bigView);
         builder.setCustomBigContentView(bigView);
-        builder.setContentTitle("Music Player");
+        builder.setContentTitle(getString(R.string.app_name));
         builder.setContentText("now is playing...");
         startForeground(1, builder.build());
-
-
-
-
-
-
-
-
-
     }
 
 }
